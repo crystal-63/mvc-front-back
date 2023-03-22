@@ -1,0 +1,18 @@
+<%- include('../templates/top.ejs') %>
+<h1>Mobile List</h1>
+<ul id="mobileList">
+    <% mobileData.forEach(item => { %>
+        <li>
+            <a href="http://127.0.0.1:8080/detail/<%= item.id %> ">
+                <%= item.brand + ' ' + item.model %> 
+            </a>
+            <button class="remove-btn" data-id="<%= item.id %> ">REMOVE</button>
+        </li>
+    <% }); %>
+</ul>
+<%- include('../templates/mobileForm.ejs') %> 
+
+<script src="http://127.0.0.1:8080/scripts/mobile.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<%- include('../templates/bottom.ejs') %>
